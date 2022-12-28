@@ -1,0 +1,47 @@
+<div class="main">
+    <div class="container">
+        <form (ngSubmit)="createTeam()">
+
+            <h2>Registry a new country</h2>
+            <label for="country">Country</label>
+            <input [(ngModel)]="newTeam.country" type="text" name="country"  />
+
+            <label for="photo">Photo</label>
+            <input  [(ngModel)]="newTeam.photo" type="text" name="photo" id="photo"  />
+
+            <button type="submit">Create new Team</button>
+        </form>
+        
+        <div class="teams" *ngFor="let item of teams">
+            <h3>{{item.country}}</h3>
+            <img src={{item.photo}} alt="">
+            <button (click)="onShowDetail(item.teamId.toString())">show</button>
+        </div>
+       
+
+    </div>
+
+    
+    <div class="product-detail" [class.active]="showDetail" *ngIf="team">
+        <button (click)="onToggleTeam()">Cerrar</button>
+         <h3>{{team.country}}</h3>
+        <img src={{team.photo}} alt="" class="bandera">
+        <button (click)="deleteTeam()">Borrar</button>
+
+        <form (ngSubmit)="createPlayer()">
+            <input [(ngModel)]="player.player" type="text" name="player" id="">
+            <input  [(ngModel)]="player.nation" type="text" name="nation" id="">
+            <input  [(ngModel)]="player.photo" type="text" name="photo" id="">
+            <button type="submit">Añadir</button>
+        </form>
+
+        <div *ngFor="let playerX of players">
+            <p>{{playerX.player}} </p>
+            <img class="player-team" src={{playerX.photo}} alt="">
+            <button (click)="deletePlayer(playerX.playerId)">Borrar Jugador</button>
+        </div>
+        
+
+     </div>
+    
+</div>

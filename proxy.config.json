@@ -1,0 +1,26 @@
+{
+  "/teams/*": {
+    "target": "http://localhost:2025",
+    "secure": true,
+    "logLevel": "debug",
+    "changeOrigin": true
+  },
+  "/players/*": {
+    "target": "http://localhost:2025",
+    "secure": true,
+    "logLevel": "debug",
+    "changeOrigin": true
+  },
+  "/matches/*": {
+    "target": "http://localhost:2025",
+    "secure": true,
+    "logLevel": "debug",
+    "changeOrigin": true
+  },
+  "/goals/*": {
+    "target": "http://localhost:2025",
+    "secure": true,
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}
